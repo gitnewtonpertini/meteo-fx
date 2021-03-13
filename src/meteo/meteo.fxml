@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="meteo.Controller">
+   <top>
+      <VBox prefHeight="68.0" prefWidth="900.0" BorderPane.alignment="CENTER">
+         <children>
+            <MenuBar id="menuBar">
+              <menus>
+                <Menu id="menuFile" fx:id="menuFile" mnemonicParsing="false" text="File">
+                  <items>
+                        <MenuItem id="itemCarica" fx:id="itemCarica" mnemonicParsing="false" onAction="#doCaricaStazioni" text="Carica stazioni" />
+                    <MenuItem id="itemClose" fx:id="itemClose" mnemonicParsing="false" text="Close" />
+                  </items>
+                </Menu>
+                <Menu fx:id="menuEdit" mnemonicParsing="false" text="Edit">
+                  <items>
+                    <MenuItem id="itemDelete" fx:id="itemDelete" mnemonicParsing="false" onAction="#doElimina" text="Delete" />
+                  </items>
+                </Menu>
+                <Menu id="menuHelp" fx:id="menuHelp" mnemonicParsing="false" text="Help">
+                  <items>
+                    <MenuItem id="itemAbout" mnemonicParsing="false" onAction="#doInfo" text="About" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+            <Label text="Rete meteo Newton-Pertini" textFill="#f20606">
+               <VBox.margin>
+                  <Insets left="10.0" top="10.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+         </children>
+      </VBox>
+   </top>
+   <center>
+      <ListView id="listaStazioni" fx:id="listaStazioni" visible="false" BorderPane.alignment="CENTER" />
+   </center>
+   <bottom>
+      <Label id="msg" fx:id="msg" BorderPane.alignment="CENTER" />
+   </bottom>
+</BorderPane>
